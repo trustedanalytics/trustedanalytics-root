@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.trustedanalytics</groupId>
+    <artifactId>tap-root</artifactId>
+    <version>master-SNAPSHOT</version>
+
+    <name>trusted analytics root</name>
+    <description>trusted analytics root pom</description>
+
+    <packaging>pom</packaging>
+
+    <licenses>
+        <license>
+            <name>Apache License Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+
+    <organization>
+        <name>TrustedAnalytics</name>
+        <url>http://trustedanalytics.org</url>
+    </organization>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <tap.parent.version>0.8.0</tap.parent.version>
+
+        <tap.cdh.version>cdh5.7.1</tap.cdh.version>
+
+        <!--Spark-->
+        <tap.spark.long.version>1.6.0</tap.spark.long.version>
+        <tap.spark.version>${tap.spark.long.version}-${tap.cdh.version}</tap.spark.version>
+        <tap.spark.yarn.version>${tap.spark.long.version}-${tap.cdh.version}</tap.spark.yarn.version>
+        <tap.spark.hive.version>${tap.spark.long.version}-${tap.cdh.version}</tap.spark.hive.version>
+
+        <!--scala -->
+        <tap.scala.long.version>2.10.5</tap.scala.long.version>
+        <tap.scala.short.version>2.10</tap.scala.short.version>
+        <tap.scalatest.version>2.1.6</tap.scalatest.version>
+
+        <!--Orient db-->
+        <tap.orientdb.version>2.1.16</tap.orientdb.version>
+
+        <!--daal-->
+        <tap.daal.version>2016.2.181</tap.daal.version>
+
+        <tap.mahout.version>0.9-${tap.cdh.version}</tap.mahout.version>
+        <tap.parquet.version>1.5.0-${tap.cdh.version}</tap.parquet.version>
+        <tap.hbase.version>1.2.0-${tap.cdh.version}</tap.hbase.version>
+        <tap.hadoop2.version>2.6.0-${tap.cdh.version}</tap.hadoop2.version>
+        <tap.zookeeper.version>3.4.5-${tap.cdh.version}</tap.zookeeper.version>
+        <tap.typesafe-config.version>1.2.1</tap.typesafe-config.version>
+        <tap.hive.version>1.1.0-${tap.cdh.version}</tap.hive.version>
+
+        <tap.maven.version>3.1.1</tap.maven.version>
+        <tap.java.version>1.8</tap.java.version>
+
+        <!--graphframes https://github.com/graphframes/graphframes-->
+        <tap.graphframes.version>0.1.0-spark1.6</tap.graphframes.version>
+    </properties>
+    <distributionManagement>
+        <repository>
+            <id>tap</id>
+            <url>https://tap.jfrog.io/tap/public</url>
+        </repository>
+        <snapshotRepository>
+            <id>tap-snapshots</id>
+            <url>https://tap.jfrog.io/tap/public-snapshots</url>
+        </snapshotRepository>
+    </distributionManagement>
+
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>http://repo1.maven.org/maven2</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>tap</id>
+            <url>https://tap.jfrog.io/tap/public</url>
+            <snapshots>
+                <enabled>false</enabled>
+                <updatePolicy>daily</updatePolicy>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>tap-snapshots</id>
+            <url>https://tap.jfrog.io/tap/public-snapshots</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>cloudera-cdh</id>
+            <url>https://repository.cloudera.com/cloudera/cloudera-repos/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>apache</id>
+            <url>https://repository.apache.org/content/groups/public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>sonatype</id>
+            <url>https://oss.sonatype.org/content/groups/public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+        <repository>
+            <id>SparkPackagesRepo</id>
+            <url>http://dl.bintray.com/spark-packages/maven</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>atk</id>
+            <url>http://maven.trustedanalytics.org/content/repositories/public/</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </pluginRepository>
+    </pluginRepositories>
+<build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-enforcer-plugin</artifactId>
+            <version>1.4.1</version>
+            <executions>
+                <execution>
+                    <id>enforce-maven</id>
+                    <goals>
+                        <goal>enforce</goal>
+                    </goals>
+                    <configuration>
+                        <rules>
+                            <requireMavenVersion>
+                                <version>${tap.maven.version}</version>
+                            </requireMavenVersion>
+                            <requireJavaVersion>
+                                <version>${tap.java.version}</version>
+                            </requireJavaVersion>
+                        </rules>
+                    </configuration>
+                </execution>
+            </executions>
+        </plugin>
+    </plugins>
+</build>
+    </project>
