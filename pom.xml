@@ -57,6 +57,8 @@
         <tap.maven.version>3.1.1</tap.maven.version>
         <tap.java.version>1.8</tap.java.version>
 
+        <tap.commons-lang3.version>3.3.2</tap.commons-lang3.version>
+
         <!--graphframes https://github.com/graphframes/graphframes-->
         <tap.graphframes.version>0.1.0-spark1.6</tap.graphframes.version>
     </properties>
@@ -229,6 +231,8 @@
                     <exclude>**/*.inc</exclude>
                     <exclude>**/*.conf</exclude>
                     <exclude>**/*.sql</exclude>
+                    <exclude>**/*.pyc</exclude>
+                    <exclude>**/*pom.xml</exclude>
                 </excludes>
             </configuration>
             <executions>
