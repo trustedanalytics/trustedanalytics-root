@@ -141,18 +141,7 @@
         </repository>
     </repositories>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>atk</id>
-            <url>http://maven.trustedanalytics.org/content/repositories/public/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-        </pluginRepository>
-    </pluginRepositories>
+   
     <build>
     <plugins>
       <plugin>
