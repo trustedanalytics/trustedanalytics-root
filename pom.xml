@@ -4,7 +4,7 @@
 
     <groupId>org.trustedanalytics</groupId>
     <artifactId>tap-root</artifactId>
-    <version>master-SNAPSHOT</version>
+    <version>0.2.0-SNAPSHOT</version>
 
     <name>trusted analytics root</name>
     <description>trusted analytics root pom</description>
@@ -30,15 +30,15 @@
         <tap.cdh.version>cdh5.7.1</tap.cdh.version>
 
         <!--Spark-->
-        <tap.spark.long.version>1.6.0</tap.spark.long.version>
-        <tap.spark.version>${tap.spark.long.version}-${tap.cdh.version}</tap.spark.version>
-        <tap.spark.yarn.version>${tap.spark.long.version}-${tap.cdh.version}</tap.spark.yarn.version>
-        <tap.spark.hive.version>${tap.spark.long.version}-${tap.cdh.version}</tap.spark.hive.version>
+        <tap.spark.long.version>2.0.2</tap.spark.long.version>
+        <tap.spark.version>${tap.spark.long.version}</tap.spark.version>
+        <tap.spark.yarn.version>${tap.spark.long.version}</tap.spark.yarn.version>
+        <tap.spark.hive.version>${tap.spark.long.version}</tap.spark.hive.version>
 
         <!--scala -->
-        <tap.scala.long.version>2.10.5</tap.scala.long.version>
-        <tap.scala.short.version>2.10</tap.scala.short.version>
-        <tap.scalatest.version>2.1.6</tap.scalatest.version>
+        <tap.scala.long.version>2.11.8</tap.scala.long.version>
+        <tap.scala.short.version>2.11</tap.scala.short.version>
+        <tap.scalatest.version>2.2.6</tap.scalatest.version>
 
         <!--Orient db-->
         <tap.orientdb.version>2.1.16</tap.orientdb.version>
@@ -47,12 +47,12 @@
         <tap.daal.version>2016.2.181</tap.daal.version>
 
         <tap.mahout.version>0.9-${tap.cdh.version}</tap.mahout.version>
-        <tap.parquet.version>1.5.0-${tap.cdh.version}</tap.parquet.version>
+        <tap.parquet.version>1.7.0</tap.parquet.version>
         <tap.hbase.version>1.2.0-${tap.cdh.version}</tap.hbase.version>
-        <tap.hadoop2.version>2.6.0-${tap.cdh.version}</tap.hadoop2.version>
-        <tap.zookeeper.version>3.4.5-${tap.cdh.version}</tap.zookeeper.version>
+        <tap.hadoop2.version>2.7.3</tap.hadoop2.version>
+        <tap.zookeeper.version>3.4.6</tap.zookeeper.version>
         <tap.typesafe-config.version>1.2.1</tap.typesafe-config.version>
-        <tap.hive.version>1.1.0-${tap.cdh.version}</tap.hive.version>
+        <tap.hive.version>1.2.1</tap.hive.version>
 
         <tap.maven.version>3.1.1</tap.maven.version>
         <tap.java.version>1.8</tap.java.version>
@@ -60,7 +60,7 @@
         <tap.commons-lang3.version>3.3.2</tap.commons-lang3.version>
 
         <!--graphframes https://github.com/graphframes/graphframes-->
-        <tap.graphframes.version>0.1.0-spark1.6</tap.graphframes.version>
+        <tap.graphframes.version>0.3.0-spark2.0-s_2.11</tap.graphframes.version>
     </properties>
     <distributionManagement>
         <repository>
